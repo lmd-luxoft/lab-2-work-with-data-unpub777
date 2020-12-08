@@ -1,14 +1,6 @@
 ﻿namespace Monopoly
 {
-    public enum Type
-    {
-        AUTO,
-        FOOD,
-        CLOTHER,
-        TRAVEL,
-        PRISON,
-        BANK
-    }
+
 
     public abstract class Company
     {

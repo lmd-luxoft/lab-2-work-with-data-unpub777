@@ -54,12 +54,6 @@ namespace Monopoly
             }
 
             return false;
-
-            //int i = _players.Select((item, indx) => new { name = item.Item1, index = indx })
-            //    .Where(n => n.name == x.Item1)
-            //    .Select(p => p.index).FirstOrDefault();
-            //_fields[i] = new Tuple<string, Type, int, bool>(k.Item1, k.Item2, v, k.Item4);
-            ////return true;
         }
 
         internal Player GetPlayerInfo(int index)
