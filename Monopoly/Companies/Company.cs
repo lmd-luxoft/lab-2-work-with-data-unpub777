@@ -23,7 +23,7 @@
 
         public virtual bool CanBuy { get => OwnerIndex == 0; }
 
-        public bool CanRent => CanBuy || OwnerIndex != 0;
+        public bool CanRent => !CanBuy || OwnerIndex != 0;
 
         public bool HasOwner => OwnerIndex != 0;
 
