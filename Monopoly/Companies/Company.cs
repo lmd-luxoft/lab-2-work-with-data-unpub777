@@ -2,12 +2,15 @@
 {
 
 
-    public abstract class Company
+    public class Company
     {
-        public Company(string name, int ownerIndex, bool item4)
+        public Company(string name, int ownerIndex, int buyPrice, int rentPrice, bool canBuy, bool item4)
         {
             Name = name;
             OwnerIndex = ownerIndex;
+            BuyPrice = buyPrice;
+            RentaPrice = rentPrice;
+            CanBuy = canBuy;
             Item4 = item4;
         }
 
@@ -17,13 +20,13 @@
 
         public bool Item4 { get; set; }
 
-        public abstract int BuyPrice { get; }
+        public int BuyPrice { get; }
 
-        public abstract int RentaPrice { get; }
+        public int RentaPrice { get; }
 
-        public virtual bool CanBuy { get => OwnerIndex == 0; }
+        public bool CanBuy { get; }
 
-        public bool CanRent => !CanBuy || OwnerIndex != 0;
+        public bool CanRent => !CanBuy || HasOwner;
 
         public bool HasOwner => OwnerIndex != 0;
 

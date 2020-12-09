@@ -1,9 +1,5 @@
 ﻿// NUnit 3 tests
 // See documentation : https://github.com/nunit/docs/wiki/NUnit-Documentation
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Monopoly.Companies;
 using NUnit.Framework;
 
 namespace Monopoly
@@ -31,14 +27,14 @@ namespace Monopoly
         {
             Company[] expectedCompanies = 
                 new Company[]{
-                new Auto("Ford",0,false),
-                new Food("MCDonald", 0, false),
-                new Clother("Lamoda", 0, false),
-                new Travel("Air Baltic",0,false),
-                new Travel("Nordavia",0,false),
-                new Prison("Prison",0,false),
-                new Food("MCDonald",0,false),
-                new Auto("TESLA",0,false)
+                new Company("Ford", 0, 500, 250, true, false),
+                new Company("MCDonald", 0, 250, 250, true, false),
+                new Company("Lamoda", 0, 100, 250, true, false),
+                new Company("Air Baltic", 0, 700, 300, true, false),
+                new Company("Nordavia", 0, 700, 300, true, false),
+                new Company("Prison", 0, 0, 1000, false, false),
+                new Company("MCDonald", 0, 250, 250, true, false),
+                new Company("TESLA", 0, 500, 250, true, false)
             };
             string[] players = new string[] { "Peter", "Ekaterina", "Alexander" };
             Monopoly monopoly = new Monopoly(players);

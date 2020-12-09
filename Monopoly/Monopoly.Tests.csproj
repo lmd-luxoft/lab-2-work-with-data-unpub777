@@ -40,13 +40,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Companies\Auto.cs" />
-    <Compile Include="Companies\Bank.cs" />
-    <Compile Include="Companies\Clother.cs" />
     <Compile Include="Companies\Company.cs" />
-    <Compile Include="Companies\Food.cs" />
-    <Compile Include="Companies\Prison.cs" />
-    <Compile Include="Companies\Travel.cs" />
     <Compile Include="Monopoly.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="TestClass.cs" />

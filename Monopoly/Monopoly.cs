@@ -1,9 +1,6 @@
-﻿using Monopoly.Companies;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Monopoly
 {
@@ -18,14 +15,14 @@ namespace Monopoly
                 _players.Add(new Player(p[i], 6000));
             }
 
-            _fields.Add(new Auto("Ford", 0, false));
-            _fields.Add(new Food("MCDonald", 0, false));
-            _fields.Add(new Clother("Lamoda", 0, false));
-            _fields.Add(new Travel("Air Baltic", 0, false));
-            _fields.Add(new Travel("Nordavia", 0, false));
-            _fields.Add(new Prison("Prison", 0, false));
-            _fields.Add(new Food("MCDonald", 0, false));
-            _fields.Add(new Auto("TESLA", 0, false));
+            _fields.Add(new Company("Ford", 0, 500, 250, true, false));
+            _fields.Add(new Company("MCDonald", 0, 250, 250, true, false));
+            _fields.Add(new Company("Lamoda", 0, 100, 250, true, false));
+            _fields.Add(new Company("Air Baltic", 0, 700, 300, true, false));
+            _fields.Add(new Company("Nordavia", 0, 700, 300, true, false));
+            _fields.Add(new Company("Prison", 0, 0, 1000, false, false));
+            _fields.Add(new Company("MCDonald", 0, 250, 250, true, false));
+            _fields.Add(new Company("TESLA", 0, 500, 250, true, false));
         }
 
         internal List<Player> GetPlayersList()
@@ -45,7 +42,7 @@ namespace Monopoly
         {
             var x = GetPlayerInfo(playerIndex);
 
-            if (company.CanBuy)
+            if (company.CanBuy && !company.HasOwner)
             {
                 _players[playerIndex - 1] = new Player(x.Name, x.Cash - company.BuyPrice);
                 company.OwnerIndex = playerIndex;
